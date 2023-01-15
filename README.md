@@ -14,3 +14,9 @@ This module introduces you to a variety of collections that are used in several,
 - [6 Complexity](6-complexity)
 - [7 List (Dynamic Array)](7-list)
 - [8 LINQ](8-linq)
+
+## Passing Criteria
+Implement either `TurboLinkedStack`, `TurboLinkedQueue` or `TurboLinkedList` including Unit Tests.
+
+## Excellent Criteria
+On top of that, implement `TurboStack`, `TurboQueue` or `TurboList`, which internally uses an array for a buffer instead of a linked list.
