@@ -14,20 +14,20 @@
 
 ```cs
 // Returns all Odd Numbers until the given number. e.g.:
-// GetOddNumbers(12) -> {0, 2, 4, 8, 10, 12};
-// GetOddNumbers(15) -> {0, 2, 4, 8, 10, 12, 14};
-// GetOddNumbers(-1) -> {};
-// GetOddNumbers(0) -> {0};
-public static List<int> GetOddNumbersList(int maxNumber){
+// GetEvenNumbersList(12) -> {0, 2, 4, 8, 10, 12};
+// GetEvenNumbersList(15) -> {0, 2, 4, 8, 10, 12, 14};
+// GetEvenNumbersList(-1) -> {};
+// GetEvenNumbersList(0) -> {0};
+public static List<int> GetEvenNumbersList(int maxNumber){
 
 }
 
 // Returns all Odd Numbers until the given number. e.g.:
-// GetOddNumbers(12) -> {0, 2, 4, 8, 10, 12};
-// GetOddNumbers(15) -> {0, 2, 4, 8, 10, 12, 14};
-// GetOddNumbers(-1) -> {};
-// GetOddNumbers(0) -> {0};
-public static IEnumerable<int> GetOddNumbers(int maxNumber){
+// GetEvenNumbers(12) -> {0, 2, 4, 8, 10, 12};
+// GetEvenNumbers(15) -> {0, 2, 4, 8, 10, 12, 14};
+// GetEvenNumbers(-1) -> {};
+// GetEvenNumbers(0) -> {0};
+public static IEnumerable<int> GetEvenNumbers(int maxNumber){
 
 }
 ```

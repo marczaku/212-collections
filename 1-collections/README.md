@@ -1,5 +1,5 @@
 # 0 Introduction
-- Create an empty solution named `201-Algorithms-And-DataStructures`
+- Create an empty solution named `Algorithms-And-DataStructures`
 - Create a Console Project within the Solution named `HelloWorld`
 - Run the Project
 - Create a Library Project within the Solution named `TurboCollections`
@@ -19,7 +19,7 @@
 - Run the Project
 
 # 1 Collections
-- Create a Project named `1_2_Collections`
+- Create a Project named `P1_2_Collections`
 - Create a `List` to store the numbers `137`,`1000`, `-200`
 - Use a `for`-Loop and the `index-Operator []` to print all values in the `List`
 - Create an `ArrayList` to store the values `true`, `"Forsbergs"`, `'a'`, `1000`, `.12f`;
