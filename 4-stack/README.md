@@ -8,6 +8,8 @@
 Implement the class documented below:
 
 ```cs
+using System.Collections;
+
 public class TurboLinkedStack<T> : IEnumerable<T> {
     class Node {
         public T Value;
@@ -16,14 +18,18 @@ public class TurboLinkedStack<T> : IEnumerable<T> {
     Node LastNode;
 
     void Push(T item) {
+        throw new NotImplementedException();
         // Insert Code from AddNumber Example in #4 here
     }
 
     public T Peek() {
+        throw new NotImplementedException();
         // Return the Value of Last Node here.
     }
 
-    public T Pop() {
+    public T Pop()
+    {
+        throw new NotImplementedException();
         // 1. Save the Last Node locally so we can return the value later.
         // 2. Now, assign the Last Node's Previous Node to be the Last Node.
         // -- This effectively removes the previously Last Node of the Stack
@@ -32,7 +38,7 @@ public class TurboLinkedStack<T> : IEnumerable<T> {
         // -- We assign that before customer 435 to LastNode.
         // -- -- 435 knows that 434 was before him.
         // -- -- But he has no memory of customer 436.
-        
+
         // Now, return the Value of the Node that you cached in Step 1.
     }
 
@@ -49,23 +55,28 @@ public class TurboLinkedStack<T> : IEnumerable<T> {
             // But instead of Printing Nodes, you just count how many Nodes you have visited
             // Similar to this:
             int count = 0;
-            while(/*...*/){
+            while(false/* remove false and replace with correct condition...*/){
                 count++;
             }
             return count;
         }
     }
 
-    IEnumerator<T> IEnumerable<T>.GetEnumerator() {
+    public IEnumerator<T> GetEnumerator() {
         // This one is a bonus and a bit more difficult.
         // You need to create a new class named Enumerator.
         // You find the details below.
         var enumerator = new Enumerator(){
-            CurrentNode = null;
+            CurrentNode = null,
             // This might look confusing. But remember? Last In. First Out.
-            FirstNode = LastNode;
+            FirstNode = LastNode
         };
         return enumerator;
+    }
+    
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 
     class Enumerator : IEnumerator<T> {
@@ -73,6 +84,7 @@ public class TurboLinkedStack<T> : IEnumerable<T> {
         public Node FirstNode;
 
         public bool MoveNext(){
+            throw new NotImplementedException();
             // if we don't have a current node, we start with the first node
             if(CurrentNode == null){
                 CurrentNode = FirstNode;
@@ -84,15 +96,21 @@ public class TurboLinkedStack<T> : IEnumerable<T> {
 
         public T Current {
             get{
+                throw new NotImplementedException();
                 // Return the Current Node's Value.
             }
         }
 
         // This Boiler Plate is necessary to correctly implement `IEnumerable` interface.
-        object IEnumerable.Current => Current;
+        object IEnumerator.Current => Current;
 
         public void Reset() {
             // Look at Move. How can you make sure that this Enumerator starts over again?
+        }
+
+        public void Dispose()
+        {
+            // This function is not needed right now.
         }
     }
 }

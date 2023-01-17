@@ -1,5 +1,5 @@
 # 2 Iterator Pattern
-- Create a Project named `1_3_Iterator`
+- Create a Project named `P1_3_Iterator`
 - Create a `List` with 5 numbers: `1`, `1`, `2`, `3`, `5`.
 - Assign it to a Variable of Type `IEnumerable`.
 - Use `GetEnumerator()` and a `while`-Loop to print all elements of the `IEnumerable`-Variable.
@@ -7,7 +7,7 @@
 - Implement the functions `GetOddNumbers` and `GetOddNumbersList` documented below within your `TurboMaths` class
   - Hint: use `yield` within `GetOddNumbers`
   - Add Unit Tests for both Functions (Use the test cases documented above the function as a base)
-- Invoke each functions within `Program` in your `1_3_Iterator` Project and pass `12` as an argument
+- Invoke each functions within `Program` in your `P1_3_Iterator` Project and pass `12` as an argument
 - Use `foreach` to iterate over the result and print each number of the result
 - Invoke `GetOddNumbers` with `1_000_000_000` as an argument. No Problem, right?
 - Invoke `GetOddNumbersList` with `1_000_000_000` as an argument. Observe the result.

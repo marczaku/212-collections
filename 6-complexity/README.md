@@ -1,9 +1,9 @@
 # 6 Complexity
 
 ## Performance Optimization: Improving Count
-- Assess `TurboLinkedQueue`'s `Count()` Complexity
+- Assess `TurboLinkedQueue`'s and/or `TurboLinkedStack`'s `Count()` Complexity
   - For n items in the collection, how many Items need to be iterated over in order to return the correct Count
-- Improve `TurboLinkedQueue`'s `Count()` Complexity
+- Improve `TurboLinkedQueue`'s and/or `TurboLinkedStack`'s `Count()` Complexity
   - Cache the `Count` in a Field instead of calculating it dynamically
 
 ## Performance Optimization: Improving Enqueue
