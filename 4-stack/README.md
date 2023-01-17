@@ -2,10 +2,11 @@
 
 ## 4.1 Tests
 - Add a new class named `TurboLinkedStackTests` to `TurboCollections.Test`
-- For each method that you implement in `5.2`, write reasonable Unit Test Cases.
+- For each method that you implement in `4.2`, write reasonable Unit Test Cases.
 
 ## 4.2 Class
-Implement the class documented below:
+- Add a new File named `TurboLinkedStack.cs` to your Project `TurboCollections`.
+- In that File, implement the class documented below:
 
 ```cs
 using System.Collections;

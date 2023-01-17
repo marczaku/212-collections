@@ -5,7 +5,8 @@
 - Add Test Cases on your own
 
 ## 5.2 Class
-Implement the following class:
+- Add a new File named `TurboLinkedQueue.cs` to your Project `TurboCollections`.
+- In that File, implement the class documented below:
 
 ```cs
 public interface ITurboQueue<T> : IEnumerable<T> {
