@@ -15,6 +15,7 @@
 public class TurboLinkedQueue<T> : IEnumerable<T> {
     /*...*/
     // We always store and update the LastNode as well.
+    // Additionally to the FirstNode (which we need for Dequeueing)
     Node LastNode;
 
     public void Enqueue(T value){

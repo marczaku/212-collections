@@ -73,78 +73,10 @@ For this implementation, we will set up a Solution which will allow you to work 
 
 Here's a Guideline for how to use the DotNet CLI to do so: [CLI Multi-Project Setup](https://gist.github.com/InaSLew/a0b174f07fb657e8a3133daa3e942fb9)
 
-## Application: CustomerManager
 
-The Idea is to write an application that allows you to add and remove customers to a list.
 
-```
-Choose one option:
-(1) Add a Customer
-(2) Remove a Customer by name
-(3) Remove a Customer by index
-(4) Display all Customers
-<<< 1
-What is the Customer's name?
-<<< Marc
-Choose an option:
-(1) Add a Customer
-(2) Remove a Customer by name
-(3) Remove a Customer by index
-(4) Display all Customers
-<<< 1
-What is the Customer's name?
-<<< Anna
-Choose an option:
-(1) Add a Customer
-(2) Remove a Customer by name
-(3) Remove a Customer by index
-(4) Display all Customers
-<<< 1
-What is the Customer's name?
-<<< Max
-Choose an option:
-(1) Add a Customer
-(2) Remove a Customer by name
-(3) Remove a Customer by index
-(4) Display all Customers
-<<< 4
-0: Marc
-1: Anna
-2: Max
-Choose an option:
-(1) Add a Customer
-(2) Remove a Customer by name
-(3) Remove a Customer by index
-(4) Display all Customers
-<<< 2
-What is the Customer's name?
-<<< Marc
-Choose an option:
-(1) Add a Customer
-(2) Remove a Customer by name
-(3) Remove a Customer by index
-(4) Display all Customers
-<<< 4
-0: Anna
-1: Max
-Choose an option:
-(1) Add a Customer
-(2) Remove a Customer by name
-(3) Remove a Customer by index
-(4) Display all Customers
-<<< 3
-What index?
-<<< 1
-Choose an option:
-(1) Add a Customer
-(2) Remove a Customer by name
-(3) Remove a Customer by index
-(4) Display all Customers
-<<< 4
-0: Anna
-```
-
-## You did it wrong!
+<details>
+  <summary> Open after finishing the implementation using an Array.</summary>
 
 Have you completed all of the steps for implementing the `TurboList`? Well, then chances are that you did it wrongly. Sorry. Well, not wrong really, but quite wasteful of resources.
 
@@ -170,16 +102,16 @@ What is the problem with this? Well, every time when the Array needs to be Resiz
 
  That's a lot of wasted resources. Ideally, your list would do something like this:
 
-| Action | List Count | Array Length | Garbage Created
-:---------:|:------------:|:---------------:|:----------:
-|     |     0      |  0 | 0
-| Add |     1      |  4 | 12*
-| Add |     2      |  4 | 0
-| Add |     3      |  4 | 0
-| Add |     4      |  4 | 0
-| Remove |     3      |  4 | 0
-| Add |     4      |  4 | 0
-| Add |     5      |  8 | 28
+| Action | List Count | Array Length | Garbage Created|
+|:---------:|:------------:|:---------------:|:----------:|
+|     |     0      |  0 | 0 |
+| Add |     1      |  4 | 12* |
+| Add |     2      |  4 | 0 |
+| Add |     3      |  4 | 0 |
+| Add |     4      |  4 | 0 |
+| Remove |     3      |  4 | 0 |
+| Add |     4      |  4 | 0 |
+| Add |     5      |  8 | 28 |
 
 *This Garbage could also be reduced to zero, if you use `Array.Empty<int>()` when initializing an empty array.
 - The Method returns a shared static empty array.
@@ -190,4 +122,4 @@ In other words: always make sure that there's some extra space in the buffer. It
 
 This is very common with Algorithms and Data Structures: you either benefit in less Memory Consumption, or better CPU Performance.
 
----
+</details>

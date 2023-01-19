@@ -10,7 +10,7 @@ Implement the following class:
 ```cs
 public interface ITurboList<T> : IEnumerable<T> {
   // returns the current amount of items contained in the list.
-  int Count;
+  int Count {get;}
   // adds one item to the end of the list.
   void Add(T item);
   // gets the item at the specified index. If the index is outside the correct range, an exception is thrown.
@@ -44,7 +44,7 @@ public class TurboLinkedList<T> : ITurboList<T> {
         // But we store the Next Node for each Node instead.
         public Node Next;
     }
-    // Also, we store the first instead of the last Node. First Come, First Serve.
+    // Since we iterate over a List in the correct order, we should keep a reference to the First Node:
     Node FirstNode;
 
     public void Add(T value){
@@ -62,34 +62,73 @@ public class TurboLinkedList<T> : ITurboList<T> {
 }
 ```
 
-## 5.3 Application: Spotify Song Queue
-Write a `SpotifySongQueue` Console Application.
-- Reference `TurboCollections`
-- Use `TurboLinkedQueue`
+## 7.3 Application: CustomerManager
 
-The User repeatedly has the following options:
-- `[s]kip to next song`: If there is another song in the queue, it prints `$"Now Playing {songName}."`. else, it says `"No more songs in the Queue. Add new Songs to the Queue first."`
-- `[a]dd new song to the queue`: The application asks for a Song Name and then adds it to the Queue.
-
-Sample Use:
+The Idea is to write an application that allows you to add and remove customers to a list.
 
 ```
-Output:What would you like to do? [s]kip or [a]dd?
-Input:a
-Output:Enter the Song's Name
-Input:ABBA - Mamma Mia
-Output:What would you like to do? [s]kip or [a]dd?
-Input:a
-Output:Enter the Song's Name
-Input:Shakira - Hips don't lie
-Output:What would you like to do? [s]kip or [a]dd?
-Input:s
-Output:Now Playing: ABBA - Mamma Mia
-Output:What would you like to do? [s]kip or [a]dd?
-Input:s
-Output:Now Playing: Shakira - Hips don't lie
-Output:What would you like to do? [s]kip or [a]dd?
-Input:s
-Output:There is no more songs in the Queue.
-Output:What would you like to do? [s]kip or [a]dd?
+Choose one option:
+(1) Add a Customer
+(2) Remove a Customer by name
+(3) Remove a Customer by index
+(4) Display all Customers
+<<< 1
+What is the Customer's name?
+<<< Marc
+Choose an option:
+(1) Add a Customer
+(2) Remove a Customer by name
+(3) Remove a Customer by index
+(4) Display all Customers
+<<< 1
+What is the Customer's name?
+<<< Anna
+Choose an option:
+(1) Add a Customer
+(2) Remove a Customer by name
+(3) Remove a Customer by index
+(4) Display all Customers
+<<< 1
+What is the Customer's name?
+<<< Max
+Choose an option:
+(1) Add a Customer
+(2) Remove a Customer by name
+(3) Remove a Customer by index
+(4) Display all Customers
+<<< 4
+0: Marc
+1: Anna
+2: Max
+Choose an option:
+(1) Add a Customer
+(2) Remove a Customer by name
+(3) Remove a Customer by index
+(4) Display all Customers
+<<< 2
+What is the Customer's name?
+<<< Marc
+Choose an option:
+(1) Add a Customer
+(2) Remove a Customer by name
+(3) Remove a Customer by index
+(4) Display all Customers
+<<< 4
+0: Anna
+1: Max
+Choose an option:
+(1) Add a Customer
+(2) Remove a Customer by name
+(3) Remove a Customer by index
+(4) Display all Customers
+<<< 3
+What index?
+<<< 1
+Choose an option:
+(1) Add a Customer
+(2) Remove a Customer by name
+(3) Remove a Customer by index
+(4) Display all Customers
+<<< 4
+0: Anna
 ```
