@@ -32,7 +32,7 @@ public interface ITurboList<T> : IEnumerable<T> {
   void AddRange(IEnumerable<T> items);
   // --------------- important, but difficult ---------------
   // gets the iterator for this collection. Used by IEnumerable<T>-Interface to support foreach.
-  IEnumerator<T> IEnumerable<T>.GetEnumerator();
+  // IEnumerator<T> IEnumerable<T>.GetEnumerator();
 }
 ```
 

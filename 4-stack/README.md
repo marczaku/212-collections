@@ -67,11 +67,7 @@ public class TurboLinkedStack<T> : IEnumerable<T> {
         // This one is a bonus and a bit more difficult.
         // You need to create a new class named Enumerator.
         // You find the details below.
-        var enumerator = new Enumerator(){
-            CurrentNode = null,
-            // This might look confusing. But remember? Last In. First Out.
-            FirstNode = LastNode
-        };
+        var enumerator = new Enumerator(LastNode);
         return enumerator;
     }
     
@@ -81,8 +77,8 @@ public class TurboLinkedStack<T> : IEnumerable<T> {
     }
 
     class Enumerator : IEnumerator<T> {
-        public Node CurrentNode;
-        public Node FirstNode;
+        private Node CurrentNode;
+        private Node FirstNode;
 
         public bool MoveNext(){
             throw new NotImplementedException();
