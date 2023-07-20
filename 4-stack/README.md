@@ -79,6 +79,11 @@ public class TurboLinkedStack<T> : IEnumerable<T> {
     class Enumerator : IEnumerator<T> {
         private Node CurrentNode;
         private Node FirstNode;
+        private Node _lastNode;
+
+        public Enumerator(Node lastNode) {
+            _lastNode = lastNode;
+        }
 
         public bool MoveNext(){
             throw new NotImplementedException();
