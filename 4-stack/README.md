@@ -18,7 +18,7 @@ public class TurboLinkedStack<T> : IEnumerable<T> {
     }
     Node LastNode;
 
-    void Push(T item) {
+    public void Push(T item) {
         throw new NotImplementedException();
         // Insert Code from AddNumber Example in #4 here
     }
