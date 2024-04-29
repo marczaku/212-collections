@@ -4,7 +4,7 @@
 
 The goal of most software written is to provide reusable components, in order to prevent us from needing to reinvent the wheel. This was accomplished in .NET over the years in multiple fashion.
 
-## Non-Generic Collections
+## Non-Generic Collections (C#-Only)
 
 Non Generic collections in .NET are old-fashioned collections that provide no Type-Safety. They are included in the `System.Collections`-Namespace.
 
@@ -41,6 +41,8 @@ It is because this collection only stores information by their base type `object
 
 In Summary, Non-Generic Collections are reusable, general-purpose Data Structures provide no Type-Safety, but allow you to store a variable amount of Data.
 
+In C++, a similar result can be achieved by creating a Collection of Type `std::any` (modern C++) or `std::void*` (old-style C++)
+
 ## Generic Collections
 
 Generic Collections have been added to .NET when Generic Classes were introduced. They are included in the `System.Collections.Generic`-Namespace.
@@ -56,6 +58,19 @@ names.Add("Daniel");
 names.Add("René");
 ```
 
+Or in C++:
+
+```c++
+#include <vector>
+#include <string>
+using namespace std;
+
+vector<string> names{};
+names.push_back("Marc");
+names.push_back("Daniel");
+names.push_back("René");
+```
+
 You can see that now we had to specify a Generic Type Argument for the `List`. This Data Structure will now only allow objects of type `string` to be added to it. Trying to add any other Data Type will result in Compiler Errors.
 
 This also makes accessing the Data very easy:
@@ -66,6 +81,16 @@ using System.Collections.Generic;
 List<int> numbers = new List<int>();
 numbers.Add(2);
 numbers.Add(-5);
+int first = numbers[0];
+int second = numbers[1];
+```
+
+Or in C++:
+
+```c++
+vector<int> numbers{};
+numbers.push_back(2);
+numbers.push_back(-5);
 int first = numbers[0];
 int second = numbers[1];
 ```

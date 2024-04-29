@@ -14,7 +14,7 @@ We will learn about many different kinds of Collections. They all store items in
 
 But then, how can we define a standardized way for looking at all items in a collection?
 
-## The Solution
+## The Solution (Pattern)
 
 ```cs
 public interface ICollection {
@@ -42,7 +42,9 @@ while(iterator.HasNext()){
 }
 ```
 
-## IEnumerable
+## The Solution (C#)
+
+### IEnumerable
 
 The `IEnumerable`-Interface is defined twice. Once as `System.Collections.IEnumerable` and once as `System.Collections.Generic.IEnumerable<T>`. I guess you know, why? Because the latter is Type-Safe and used for Generic Collections.
 
@@ -71,7 +73,7 @@ public interface IEnumerable
 
 Alright. This does not look all too interesting. All the Magic happens in the `IEnumerator`-Interface, I suppose?
 
-## IEnumerator
+### IEnumerator
 
 ```cs
 namespace System.Collections;
@@ -115,7 +117,7 @@ Alright, the Interface looks straightforward enough, doesn't it?
 
 `void Reset()` allows you to reset the Enumerator, in case you want to start over from the first element again. This is pretty uncommon.
 
-## foreach
+### foreach
 
 If you have done the previous Exercise, then you have actually implemented your own Implementation of `foreach`.
 
@@ -134,7 +136,57 @@ foreach(int number in numbers){
 
 Pretty neat, or? Now, you've come to understand that this keyword does not do any Magic, but just uses existing Program Code under the hood. And that you are able to provide `foreach`-Support for your class by implementing the `IEnumerable` or `IEnumerable<T>`-Interface.
 
-## yield
+## The Solution (C++)
+
+### begin() and end()
+
+- `begin()` returns an `Iterator` that points to the first element of the collection.
+- `end()` returns an `Iterator` that points behind the last element of the collection.
+
+```c++
+class IterableCollection<T>
+{
+    Iterator<T> begin() const;
+    Iterator<T> end() const;
+};
+```
+
+### Iterator
+- `++` moves the iterator to the next element
+- `*` the dereferencing operator returns the value that the iterator currently points to
+- `==` returns true if 2 operators point to the same element
+- `!=` returns true if 2 operators point to different elements
+
+```c++
+class Iterator<T>{
+    Iterator<T>& operator++();
+    T& operator*() const;
+
+    // Equality operators
+    bool operator==(const Iterator<T>& other) const;
+    bool operator!=(const Iterator<T>& other) const;
+};
+```
+
+### foreach
+
+Similarly to C#, C++' `foreach` keyword uses the iterator that can be received using `begin()` to retrieve each element of a collection and is much easier to use than iterating manually:
+
+```c++
+#include <vector>
+#include <iostream>
+
+using namespaces td;
+
+vector<int> numbers{};
+numbers.push_back(2);
+numbers.push_back(5);
+foreach(int& number : numbers){
+    cout << number << "\n";
+}
+```
+
+## yield (C# Only)
 
 ### Introduction
 
@@ -310,7 +362,7 @@ You'll find out, if you try executing the following:
 
 ```cs
 double total = 0;
-foreach(int number in GetNumbersUntil(1000000000)){
+foreach(int number in GetNumbersUntil(1_000_000_000)){
     total += number;
 }
 Console.WriteLine($"Total: {total}");

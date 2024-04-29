@@ -23,7 +23,7 @@ Game States and UI States
 History
 - e.g. Browser History, File Explorer History, Undo/Redo
 
-## Specification
+## Specification (C#)
 
 Class: `TurboStack<T>`
 
@@ -44,6 +44,31 @@ void Clear();
 // gets the iterator for this collection. Used by IEnumerable<T>-Interface to support foreach.
 IEnumerator<T> IEnumerable<T>.GetEnumerator();
 ```
+
+## Specification (C++)
+
+Class: `<template <typename T>TurboStack`
+
+A Stack's common Interface contains the following:
+
+```c++
+// returns true if there is no item on the stack.
+bool empty() const;
+// returns the current number of items contained in the stack.
+size_t size() const;
+// adds one item on top of the stack.
+void push(const T& item);
+// returns the item on top of the stack without removing it.
+T& top();
+const T& top() const;
+// removes the top item from th stack.
+void pop()
+// --------------- BONUS ---------------
+// gets the iterator for this collection.
+Iterator<T> begin() const;
+Iterator<T> end() const;
+```
+
 ### Application: GameStateHistory
 
 Write a `GameStateHistory` - Console Application in which multiple states exist. 

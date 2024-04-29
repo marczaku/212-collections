@@ -27,3 +27,23 @@ public class TurboLinkedQueue<T> : IEnumerable<T> {
     }
     /*...*/
 ```
+
+In C++:
+
+```c++
+template<typename T>
+class TurboLinkedQueue {
+    /*...*/
+    // We always store and update the LastNode as well.
+    // Additionally to the FirstNode (which we need for Dequeueing)
+    Node* lastNode;
+public:
+    void push(const T& value){
+        // Now, we just need to check, if there is a last Node.
+        // Then assign the New Node as the Last Node's Next Node.
+        // And assign the New Node as the Last Node.
+
+        // Analogy: In our store, we always remember, who's the last customer that entered. So if a new customer arrives, we know, whom to tell who is his next customer.
+    }
+    /*...*/
+```

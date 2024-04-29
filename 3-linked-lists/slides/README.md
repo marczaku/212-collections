@@ -55,76 +55,83 @@ Instead of storing our Elements in an Array, we could create a Linked List.
 
 Imagine a Queue in a shop. Instead of every customer receiving a numbered place in the queue (like an index in an array), you just tell every customer to remember who got the spot before them. If you now want to talk to every customer, you just start with the last one and then ask the customer, who had the spot before him. You repeat that process with each customer until one customer says. "That's it, I'm the last one!"
 
-### Part 1: The Node
+### Part 1: The Node (C#)
 The Node can store one number as well as a reference to the previous Node:
 
 ```cs
 public class Node {
     public int Value;
-    public Node Previous;
+    public Node Next;
 }
 ```
 
-### Part 2: A Demo for Adding and Printing Numbers
+### Part 1: The Node (C++)
+
+```c++
+struct Node {
+    int value;
+    Node* next;
+};
+```
+
+### Part 2: A Demo for Adding and Printing Numbers (C#)
 
 ```cs
-Node LastNode = null;
+Node FirstNode = new Node{
+    Value = 0,
+    Next = null
+};
+Node LastNode = FirstNode;
 void AddNumber(int number){
-    LastNode = new Node{
+    var newNode = new Node{
         Value = number,
-        Previous = LastNode
+        Next = null
     };
+    Lastnode.Next = newNode;
+    LastNode = newNode;
 }
 void PrintAllNumbers() {
-    Node CurrentNode = LastNode;
-    while(CurrentNode != null){
-        Console.Write($"{CurrentNode.Value}, ");
+    Node currentNode = FirstNode;
+    while(currentNode != null){
+        Console.Write($"{currentNode.Value}, ");
+        currentNode = currentNode.Next
     }
     Console.WriteLine("(END)");
 }
 
-for(int i = 0; i < 1000; i++){
+for(int i = 1; i < 5; i++){
     AddNumber(i);
 }
 
 PrintAllNumbers();
 ```
 
-#### Add Number Explained
+Above kind of collection will the basis for the upcoming Collection Exercises, so make sure that you have understood it well.
 
-Above implementation of `AddNumber` does a lot of things within a single Expression. Let's look at a version where each step is split up into its own expression:
+### Part 2: A Demo for Adding and Printing Numbers (C++)
 
-```cs
-void AddNumber(int number){
-    // Create a new Node, so we can store the new number
-    Node newNode = new Node();
-    // Store the new number to the Node
-    newNode.Value = number;
-    // Have the Node remember the currently last node as its previous
-    newNode.Previous = LastNode;
-    // The new node is now the new last node
+```c++
+Node* FirstNode = new Node{0, nullptr};
+Node* LastNode = FirstNode;
+void addNumber(int number){
+    Node* newNode = new Node{number, nullptr};
+    Lastnode.next = newNode;
     LastNode = newNode;
 }
-```
-
-#### Print Numbers Explained
-```cs
-void PrintAllNumbers() {
-    // We begin by looking at the last Node
-    Node CurrentNode = LastNode;
-    // If it is not null (that means that there is no more Nodes), then:
-    while(CurrentNode != null){
-        // We print the value of the current Node
-        Console.Write($"{CurrentNode.Value}, ");
-        // And ask the node for its previous one, so we can continue with that one.
-        CurrentNode = CurrentNode.Previous;
-    } // The Loop will jump back here.
-
-    // If the While Loop has ended that means that there is no more Nodes.
+void printAllNumbers() {
+    Node* currentNode = FirstNode;
+    while(currentNode != nullptr){
+        cout << currentNode->value << ", ";
+        currentNode = currentNode.next
+    }
     Console.WriteLine("(END)");
 }
-```
 
-Above kind of collection will the basis for the upcoming Collection Exercises, so make sure that you have understood it well.
+for(int i = 1; i < 5; i++){
+    addNumber(i);
+}
+
+printAllNumbers();
+```
 
 ---

@@ -20,14 +20,14 @@ If you want things to happen sequenced one after another.
 If you want to queue up Game Events or Player Input
 - e.g. multiple pop-ups appearing on Game Star, or a player queueing actions in a strategy game. Walk, then Attack the Tower, then Kill the goddamn sheep.
 
-## Specification
+## Specification (C#)
 
 Class: `TurboQueue<T>`
 
 A Queue's common Interface contains the following:
 
 ```cs
-// returns the current amount of items contained in the stack.
+// returns the current amount of items contained in the queue.
 int Count;
 // adds one item to the back of the queue.
 void Enqueue(T item);
@@ -40,6 +40,30 @@ void Clear();
 // --------------- optional ---------------
 // gets the iterator for this collection. Used by IEnumerable<T>-Interface to support foreach.
 IEnumerator<T> IEnumerable<T>.GetEnumerator();
+```
+
+## Specification (C++)
+
+Class: `template<typename T>TurboQueue`
+
+A Queue's common Interface contains the following:
+
+```cs
+// returns true if there is no items in this queue
+bool empty() const;
+// returns the current amount of items contained in the queue.
+size_t size() const;
+// adds one item to the back of the queue.
+void push(T item);
+// returns the item in the front of the queue without removing it.
+T& front();
+const T& front() const;
+// removes the item from the front of the queue.
+void pop();
+// --------------- optional ---------------
+// gets the iterator for this collection.
+Iterator<T> begin() const;
+Iterator<T> end() const;
 ```
 
 ## Implementation
