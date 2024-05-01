@@ -1,15 +1,37 @@
 # 0 Introduction
+
+## Solution
 - Create an empty solution named `Algorithms-And-DataStructures`
+
+## Console: HelloWorld
 - Create a Console Project within the Solution named `HelloWorld`
 - Run the Project
+
+## Library: TurboCollections
 - Create a Library Project within the Solution named `TurboCollections`
+
+### Class: TurboMaths
+
+#### C#
 - In that Library Project, Create a `public static class` named `TurboMaths`
   - Make sure that it's within the `namespace` `TurboCollections`
   - With a `public static` Method `SayHello()`
-  - Have it print `$"Hello, I'm {typeof(TurboMaths)}"` to the Console
+  - Have it print `$"Hello, I'm {typeof(TurboMaths).FullName}"` to the Console
+
+#### C++
+- In that Library Project, Create a `public class` named `TurboMaths`
+  - delete the parameter-less constructor: `TurboMaths() = delete;`
+    - That's the C++ way of making a class `static` (un-instantiable)
+  - Make sure that it's within the `namespace` `TurboCollections`
+  - With a `public static` Method `SayHello()`
+  - Have it print `"Hello, I'm " << typeid(TurboMaths).name() << "\n"` to the Console
+
+## Unit Tests: TurboCollections.Test
 - Create a Unit Test Project within the Solution using `NUnit` named `TurboCollections.Test`
 - Add `TurboCollections` as a Reference to your `TurboCollections.Test`-Project
-- In that Unit Test Project, Create a `public static class` named `MathsTests`
+
+### Tests: TurboMathsTests
+- In that Unit Test Project, Create a `public static class` named `TurboMathsTests`
   - Add a Unit Test named `SayHelloExists()`
   - Have it invoke the member method `SayHello` of class `TurboMaths` in namespace `TurboCollections`
   - Then have it run `Assert.Pass()` to explicitly pass the test

@@ -110,7 +110,6 @@ What do you want to do?
 ```
 
 Use a Stack to keep track of the History.
-
 - What if you also wanted to be able to go forward again?
 
 ---

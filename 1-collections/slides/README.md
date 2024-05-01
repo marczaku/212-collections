@@ -59,6 +59,11 @@ names.Add("René");
 ```
 
 Or in C++:
+- part of STL
+- stands for Standard Template Library
+  - Standard: Components regularly used
+  - Template: Uses Template Programming, meaning Compile-time polymorphism
+  - Library: Collection of code provided through a static library
 
 ```c++
 #include <vector>

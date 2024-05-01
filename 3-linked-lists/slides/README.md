@@ -51,9 +51,11 @@ int[] numbers = new int[10_000_000];
 ## Solution
 Instead of storing our Elements in an Array, we could create a Linked List.
 - We store each Element in a `Node`
-- Each `Node` remembers its `Next` or `Previous` Node.
+- Each `Node` stores either its
+  - `Next` Node (used in Queue, LinkedList and DoubleLinkedList)
+  - or `Previous` Node (used in Stack, DoubleLinkedList)
 
-Imagine a Queue in a shop. Instead of every customer receiving a numbered place in the queue (like an index in an array), you just tell every customer to remember who got the spot before them. If you now want to talk to every customer, you just start with the last one and then ask the customer, who had the spot before him. You repeat that process with each customer until one customer says. "That's it, I'm the last one!"
+Imagine a Queue in a shop. Instead of every customer receiving a numbered place in the queue (like an index in an array), you just tell every customer to remember who got the spot behind them. If you now want to talk to every customer, you just start with the first one and then ask the customer, who had the spot behind them. You repeat that process with each customer until one customer says. "That's it, I'm the last one, no one is behind me!"
 
 ### Part 1: The Node (C#)
 The Node can store one number as well as a reference to the previous Node:
@@ -133,5 +135,3 @@ for(int i = 1; i < 5; i++){
 
 printAllNumbers();
 ```
-
----
