@@ -20,3 +20,30 @@ Implement either `TurboLinkedQueue` or `TurboLinkedList` including Unit Tests an
 
 ## Excellent Criteria
 On top of that, implement `TurboQueue` or `TurboList`, which internally uses an array for a buffer instead of a linked list.
+
+
+## Learning Path
+
+```mermaid
+mindmap
+  root((Algorithms and Data Structures))
+    Data Structures
+      C++: STL - Standard Template Library
+      C#: System.Collections.Generic
+      Iterator Pattern
+        C#: IEnumerable, IEnumerator, yield
+        C++: begin, end, iterator
+      General Collections
+        Internal Representation
+          Linked Nodes
+            Single-Linked
+            Double-Linked
+          Array
+            Ring-Buffer
+        Sequential
+          List
+          Queue
+          Stack
+
+
+```

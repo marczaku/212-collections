@@ -42,7 +42,7 @@
 
 # 1 Collections
 - Create a Project named `P1_2_Collections`
-- Create a `List` to store the numbers `137`,`1000`, `-200`
+- Create a `List` (C#) or `vector` (C++) to store the numbers `137`,`1000`, `-200`
 - Use a `for`-Loop and the `index-Operator []` to print all values in the `List`
-- Create an `ArrayList` to store the values `true`, `"Forsbergs"`, `'a'`, `1000`, `.12f`;
+- Create an `ArrayList` (C#) to store the values `true`, `"Forsbergs"`, `'a'`, `1000`, `.12f`;
 - Use a `for`-Loop and the `index-Operator []` to print all values in the `ArrayList`

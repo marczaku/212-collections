@@ -43,6 +43,37 @@ In Summary, Non-Generic Collections are reusable, general-purpose Data Structure
 
 In C++, a similar result can be achieved by creating a Collection of Type `std::any` (modern C++) or `std::void*` (old-style C++)
 
+The code for that is really not easy and looks something like this:
+
+```c++
+#include <iostream>
+#include <vector>
+#include <any>
+
+int main() {
+    // Create a vector containing an int, a string, a C-style string, and a bool
+    std::vector<std::any> vec;
+
+    // Add elements to the vector
+    vec.push_back(10);
+    vec.push_back("C-style string");
+    vec.push_back(true);
+
+    // Print elements of the vector to the console
+    for (const auto& item : vec) {
+        if (item.type() == typeid(int)) {
+            std::cout << std::any_cast<int>(item) << std::endl;
+        } else if (item.type() == typeid(const char*)) {
+            std::cout << std::any_cast<const char*>(item) << std::endl;
+        } else if (item.type() == typeid(bool)) {
+            std::cout << std::boolalpha << std::any_cast<bool>(item) << std::endl;
+        }
+    }
+
+    return 0;
+}
+```
+
 ## Generic Collections
 
 Generic Collections have been added to .NET when Generic Classes were introduced. They are included in the `System.Collections.Generic`-Namespace.

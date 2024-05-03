@@ -75,9 +75,23 @@ Pretty cool and expressive, or? And you can do so many more complex things with 
 - `ToDictionary`, `ToArray`, `ToList`: Convert to Collection-Type
 - ... and many more.
 
+## Query Syntax:
+If you're not a fan of symbols, you can even use LINQ's special query syntax in C#:
+
+```csharp
+var foodBowls = from animal in animals
+                where animal.IsHungry
+                let cat = animal as Cat
+                where cat != null && cat.FavoriteFood == "Tuna"
+                select cat.FoodBowl;
+
+assistant.OrderToFill("Tuna", foodBowls);
+```
+
 ## Usage:
 - AI: Find all buildings of the player. Filter them by only the ones the AI has discovered. Filter them by the ones that seem not too well defended. Sort them by Priority. Attack the First.
 - Multiplayer: Show Clan-Members. Filter by the ones being online OR being a High Rank. Sort them by Rank.
+
 
 
 # Further Research
